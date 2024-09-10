@@ -77,10 +77,11 @@ body {
   border-radius: 8px;
 }
 
-.menu ul li a:hover,
-.menu ul li.active a {
+.menu ul li > a:hover,
+.menu ul li.active > a {
   color: #000;
   background-color: #f6f6f6;
+  transition: all 0.3s ease;
 }
 
 .menu ul li .icon {
@@ -93,10 +94,15 @@ body {
 
 .menu ul li .arrow {
   font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.menu ul li.active .arrow {
+  transform: rotate(180deg);
 }
 
 .menu .sub-menu {
-  /* display: none; */
+  display: none;
   margin-left: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -106,4 +112,10 @@ body {
 .menu .sub-menu li a {
   padding: 10px 8px;
   font-size: 12px;
+}
+
+.menu:not(:last-child) {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f6f6f6;
 }
